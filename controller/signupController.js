@@ -14,19 +14,14 @@ async function signupNewController(req,res){
       password:req.body.password
     })
 
-    await user.save()
-    .then((savedData => {
-      res.send('User saved')
-    }))
-    .catch(error=>{
-      if(error.code === 11000){
-        res.send("Duplicate value error")
-      }
-      else{
-        res.send("Error saving user")
-      }
-    })
- 
+   let result =  await user.save()
+    if(!result){
+      console.log("Error saving")
+    }
+    else{
+      console.log("Saved")
+      res.send("Saved")
+    }
   }
 
 
