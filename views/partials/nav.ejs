@@ -1,0 +1,21 @@
+<nav class="py-4">
+  <div class="container_nav d-flex justify-content-between container">
+    <h1>
+      <a href="/" class="link-underline link-underline-opacity-0">
+        <span class="fw-bold">Daily</span>Log</a
+      >
+    </h1>
+    <ul class="d-flex align-items-center gap-5" style="list-style: none">
+      <li class="d-none d-sm-block">About</li>
+      <li class="d-none d-sm-block">Contact us</li>
+      <li class="d-none d-sm-block">F.A.Q</li>
+      <li>
+        <% if(locals.userInfo){%>
+        <a class="link-underline link-underline-opacity-0" href="/login/diary">Profile</a>
+        <%} else{%>
+        <a class="link-underline link-underline-opacity-0" href="/login">Sign In</a>
+        <%}%>
+      </li>
+    </ul>
+  </div>
+</nav>

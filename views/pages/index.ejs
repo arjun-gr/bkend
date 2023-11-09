@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DailyLog | Home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        font-family: "Archivo", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="">
+    <!--data-bs-theme="dark"-->
+    <%- include('../partials/nav.ejs')%>
+    <div
+      id="hero"
+      class="container h-100 d-flex justify-content-center align-items-center border-bottom py-2 pb-4 py-sm-5 flex-column"
+    >
+      <h1 class="text-center">
+        Welcome to DailyLog <br />
+        Your Personal Daily Diary
+      </h1>
+      <div
+        class="container d-flex flex-column align-items-center justify-content-center gap-3 pt-3"
+      >
+        <p class="w-sm-50 w-100 fs-5 text-center p-2 rounded text-secondary">
+          DailyLog is your ultimate digital journal, where every moment counts.
+          Capture your daily experiences, thoughts, and emotions effortlessly.
+          Reflect, organize, and cherish your life's journey with ease. Start
+          your journaling adventure today. Sign up now and embark on a path of
+          self-discovery
+        </p>
+      </div>
+      <div class="buttons">
+        
+          <a
+            href="/login"
+            class="link-underline link-underline-opacity-0 text-white"
+            > <button class="btn btn-primary px-5 mx-2">Sign in</button></a
+          >
+        </button>
+        <button id="signup" class="btn btn-dark px-5 mx-2">
+          <a href="/signup" class="text-decoration-none text-white">Sign up</a>
+        </button>
+      </div>
+    </div>
+
+    <section>
+      <div class="container py-4 py-sm-5 border-bottom">
+        <div
+          id="main_content"
+          class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-center justify-content-center"
+        >
+          <h2 class="flex-1 fw-bold text-center pb-4">
+            Create Daily diary entries for good, <br />
+            average and below average days.
+          </h2>
+          <div id="img_container" class="">
+            <img src="/images/diary.jpg" class="flex-1 w-100" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container py-5 text-center d-flex flex-column align-items-center border-bottom">
+        <i class="bi bi-quote h1"></i>
+        <p class="w-100 w-sm-50 fs-5">Consider DailyLog to be your go-to hub for not just to-do lists but all of your notes. The organizational possibilities are expansive, and everything syncs across all of your devices that have the app enabled, so you’ll never miss a beat.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container py-5">
+        <button class="btn btn-dark">GitHub</button>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-white">
+      <div class="container py-2">
+        <p style="margin:0">Built with ♥ by Arjun Gahatraj</p>
+      </div>
+    </footer>
+  </body>
+</html>
