@@ -39,4 +39,8 @@ h1{
   .w-sm-50{
     width:50% !important;
   }
+
+  .w-sm-75{
+    width:75% !important;
+  }
 }
