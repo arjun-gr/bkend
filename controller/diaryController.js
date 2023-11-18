@@ -5,17 +5,18 @@ function diaryHome(req,res){
     res.render("pages/diary.ejs")
   }
   else{
-    res.status(404).send("Unauthorized")
+    res.render("pages/login",{error:"Login first"})
+
   }
 }
 
 async function diaryContent(req,res){
   if(req.session.userData){
     let result =await model.findOneAndUpdate({email:req.session.userData}, {$push:{posts:req.body.diaryContent}})
-    res.redirect('/login/diary')
+    res.redirect('/diary')
   }
   else{
-    res.status(404).send("unauthorized")
+    res.render("pages/diary",{error:"Error Adding Data."})
   }
 }
 

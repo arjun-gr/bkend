@@ -24,7 +24,7 @@ app.set("view engine", "ejs");
 app.use("/", indexRouter);
 app.use("/signup", signupRouter);
 app.use("/login",singInRouter);
-app.use("/login/diary", diaryRouter)
+app.use("/diary", diaryRouter)
 
 const port = process.env.port || 3000;
 app.listen(port, () => console.log(`server started at: localhost:${port}`));

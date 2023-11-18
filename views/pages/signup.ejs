@@ -40,7 +40,15 @@
       class="container d-flex align-items-center flex-column py-5 justify-content-center"
     >
       <h1 class="pb-4 fw-bold">Sign up</h1>
-      <form action="/signup/new" method="post" class="w-75 w-sm-25">
+      <%if(locals.prompt){%>
+          <p style="color:green"><%= prompt%></p>
+        <%}%>
+
+        <%if(locals.error){%>
+          <p style="color:red"><%= error%></p>
+        <%}%>
+
+      <form action="/signup" method="post" class="w-75 w-sm-25">
         <label for="email" class="fw-bold">Email</label>
         <input
           id="email"

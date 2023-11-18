@@ -6,24 +6,26 @@ function signupController(req,res){
 
 async function signupNewController(req,res){
   if(!req.body){
-    return res.status(404).send("Error")
+    res.render("pages/signup", {prompt:'Email Password required'})
   }
   else{
-    const user = new model({
-      email:req.body.email,
-      password:req.body.password
-    })
-
-   let result =  await user.save()
-    if(!result){
-      console.log("Error saving")
+    try{
+      const user = new model({
+        email:req.body.email,
+        password:req.body.password
+      })
+      await user.save()
+      res.render("pages/signup", {prompt:"User saved, Please Login"})
     }
-    else{
-      console.log("Saved")
-      res.send("Saved")
+    catch(error){
+      if(error.code === 11000){
+        res.render("pages/signup", {error:"User already exists"})
+      }
+      else{
+        res.render("pages/signup",{error:"Something went wrong"})
+      }
     }
   }
-
 
 }
 

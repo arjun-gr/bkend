@@ -1,7 +1,7 @@
 const ul_root = document.getElementById("ul_root")
 
 async function showData(){
-  const getData = await fetch('/login/diary/data')
+  const getData = await fetch('/diary/data')
   const result =await getData.json()
   console.log(result)
 

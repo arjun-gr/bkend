@@ -10,11 +10,11 @@ async function signInPostController(req,res){
   const {email, password} = req.body;
   const result =await model.findOne({email:email, password:password});
   if(!result){
-    res.status(404).send("Incorrect email/password")
+    res.render("pages/signin", {prompt:"Invalid credentials"})
   }
   else{
     req.session.userData = email
-    res.redirect("login/diary");
+    res.redirect("/diary");
   }
 }
 
@@ -23,7 +23,7 @@ function homeController(req,res){
     res.render('pages/diary')
   }
   else{
-    res.status(404).send("Unauthorized")
+    res.render("pages/signin",{error:"Please sign in"})
   }
 }
 
